@@ -23,7 +23,7 @@ export class SearchResultComponent {
 
   viewDetails(hotelId: number) {
     // Find the hotel details based on the provided hotelId
-    const hotelDetails = this.hotel.find((h) => h.id === hotelId);
+    const hotelDetails = this.hotel.find((h) => h.hotelId === hotelId);
 
     // Redirect to the HotelDetailsPage and pass the hotel details as state
     this.router.navigate(['/details-page'], { state: { hotelDetails: hotelDetails } });

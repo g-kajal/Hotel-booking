@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Customer } from '../customer.model';
 import { Hotels } from '../hotels.model';
 import { Observable } from 'rxjs';
+import { Bookings } from '../booking.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ export class HotelsService {
   private static baseUrl="http://localhost:3000";
   hotelBooking : Customer[]=[];
   hotel: Hotels[]=[];
+  book: Bookings= new Bookings();
 
   constructor(private http: HttpClient ) { }
   //This is for registering the user 
@@ -33,11 +35,7 @@ searchByCity(city:string){
 }
 
 listBooking(custId:number):Observable<Customer>{
-
 return this.http.get<Customer>(HotelsService.baseUrl+"/customer/"+custId)
-
- 
-
 }
 
 }

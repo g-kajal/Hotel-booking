@@ -17,17 +17,10 @@ export class BookingsComponent {
   custBookings:Bookings[]=[];
 
   constructor(private service:HotelsService,private router:Router){}
-
- 
-
   ngOnInit():void{
-
     this.service.listBooking(this.custId).subscribe((data)=>{
-
       this.customer=data;
-
       this.custBookings=this.customer.bookings;
-
     });
 
 }
