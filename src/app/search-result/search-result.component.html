@@ -1,16 +1,17 @@
 <table class="table table-light table-stripped">
     <thead>
      <tr>
-         <th>City</th><th>Location</th><th>Name</th><th>ID</th> <th>Action</th>
+         <th>City</th><th>Location</th><th>Name</th> <th>Description</th> <th>ID</th> <th>Action</th>
      </tr>
     </thead>
     <tbody>
      <tr *ngFor="let h of hotel">
          <td>{{h.city}}</td>
-         <td>{{h.hotelLocation}}</td>
+         <td>{{h.hotelAddress}}</td>
          <td>{{h.hotelName}}</td>
-         <td>{{h.id}}</td>
-         <button class="btn btn-primary" (click)="viewDetails(h.id)">View</button>
+         <td>{{h.hotelDescription}}</td>
+         <td>{{h.hotelId}}</td>
+         <button class="btn btn-primary" (click)="viewDetails(h.hotelId)">View</button>
 
      </tr>
     </tbody>

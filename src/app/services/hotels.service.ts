@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Customer } from '../customer.model';
 import { Hotels } from '../hotels.model';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,14 @@ removeBooking(id:number){
 
 searchByCity(city:string){
   return this.http.get<Hotels[]>(HotelsService.baseUrl+"/hotel?city="+city);
+
+}
+
+listBooking(custId:number):Observable<Customer>{
+
+return this.http.get<Customer>(HotelsService.baseUrl+"/customer/"+custId)
+
+ 
 
 }
 
